@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>12 Resep Jajanan Pasar Tradisional Indonesia</title>
+  <style>
+    :root{
+      --bg: #fffaf3;
+      --card: #ffffff;
+      --accent1: #f7c67a; /* kuning lembut */
+      --accent2: #a8e6a3; /* hijau pandan lembut */
+      --accent3: #ffd6e0; /* merah muda pastel */
+      --text: #4a2c07;
+      --muted: #7a5634;
+      --shadow: rgba(0,0,0,0.08);
+    }
+
+    * { box-sizing: border-box; scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg, var(--bg) 0%, #fffefc 100%);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing:antialiased;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      background: linear-gradient(135deg, var(--accent1), #ffdba6);
+      box-shadow: 0 6px 18px var(--shadow);
+      position: relative;
+      z-index: 1;
+    }
+    header h1 {
+      margin: 0 0 8px 0;
+      font-size: 24px;
+      letter-spacing: 0.6px;
+    }
+    header p { margin: 0; color: #fff7f0; font-weight: 600; }
+
+    .wrap { max-width: 920px; margin: 30px auto; padding: 0 18px; }
+
+    .intro {
+      background: linear-gradient(180deg, #fff9f0, #fff5eb);
+      border-radius: 14px;
+      padding: 22px;
+      box-shadow: 0 6px 16px var(--shadow);
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+    .intro p { margin: 0; color: var(--muted); }
+
+    .toc {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 14px;
+      margin-bottom: 26px;
+      box-shadow: 0 6px 16px var(--shadow);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .toc h2 { grid-column: 1 / -1; margin: 0 0 8px 0; text-align:center; color: #b45e1d; }
+    .toc a {
+      display: inline-block;
+      padding: 8px 12px;
+      border-radius: 10px;
+      text-decoration: none;
+      color: var(--text);
+      background: linear-gradient(180deg,#fff,#fffaf2);
+      border: 1px solid rgba(0,0,0,0.03);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+      transition: transform .18s ease, box-shadow .18s ease;
+      text-align: center;
+      font-weight: 600;
+    }
+    .toc a:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
+
+    .resep {
+      background: var(--card);
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 26px;
+      box-shadow: 0 8px 20px var(--shadow);
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .resep:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(0,0,0,0.09); }
+    .resep h2 { margin-top: 0; text-align:center; color:#c9732b; }
+    .photo {
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      margin: 12px 0;
+      background: #f4f2ef;
+      border: 1px solid rgba(0,0,0,0.03);
+    }
+    .photo img { width: 100%; display:block; height: auto; }
+
+    .grid-2 {
+      display: grid;
+      gap: 12px;
+      grid-template-columns: 1fr;
+    }
+    @media(min-width:740px){ .grid-2 { grid-template-columns: 1fr 1fr; } }
+
+    .box {
+      background: linear-gradient(180deg,#fff,#fffdf9);
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid rgba(0,0,0,0.03);
+      color: var(--muted);
+    }
+    .box h3 { margin:4px 0 8px 0; color: #6a3f18; font-size:16px; }
+    .box ul { margin:0; padding-left:18px; }
+    .box ol { margin:0; padding-left:18px; }
+
+    .funfact {
+      margin-top:10px;
+      font-size:13px;
+      color:#6b4a2d;
+      background: linear-gradient(180deg,#fff6ee,#fff1e6);
+      padding:8px 10px;
+      border-radius:10px;
+      border: 1px dashed rgba(0,0,0,0.04);
+    }
+
+    .kembali {
+      display:flex;
+      justify-content:center;
+      margin-top: 14px;
+    }
+    .kembali a {
+      text-decoration:none;
+      background: var(--accent2);
+      color:#2e5b2f;
+      padding:10px 14px;
+      border-radius: 999px;
+      font-weight:700;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+    }
+
+    footer {
+      text-align:center;
+      margin: 30px 0 60px 0;
+      color: #6a3f18;
+    }
+
+    /* back to top button */
+    #topBtn {
+      display: none;
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      z-index: 60;
+      border: none;
+      background: linear-gradient(135deg,#ffb87a,#ffd1b3);
+      color: #5a2f09;
+      padding: 12px 14px;
+      border-radius: 50%;
+      font-size: 18px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+      cursor: pointer;
+    }
+
+    /* small helpers */
+    .muted { color: var(--muted); font-size:14px; }
+    .center { text-align:center; }
+    .step-title { font-weight:700; color:#5f3a1d; margin-bottom:6px; }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>✨ 12 Resep Jajanan Pasar Tradisional Indonesia ✨</h1>
+    <p>Otentik, populer, dan mudah dicoba di rumah — selamat memasak!</p>
+    <img src="https://cdn1-production-images-kly.akamaized.net/llX6CmQy0XVlL3Q5a8y-TJhakXQ=/1280x720/smart/filters:quality(75):strip_icc()/kly-media-production/medias/3526740/original/095721400_1627701213-Jajan_Pasar_in_Jakarta.jpg" 
+       alt="Aneka jajanan pasar tradisional Indonesia di satu nampan"
+       style="width: 90%; max-width: 800px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); margin-top: 15px;">
+  </header>
+
+  <main class="wrap">
+    <!-- PENGANTAR (teks persis yang diminta) -->
+    <section class="intro" id="intro">
+      <p>
+        Indonesia memiliki keberagaman budaya yang luas diantaranya dapat di lihat dari berbagai kuliner tradisional masing-masing daerah di Indonesia. 
+        Di mana masing-masing kuliner ini pasti memiliki ciri khas yang tidak serupa di berbagai daerah lainnya.
+        <br><br>
+        Contoh kuliner yang biasa kita temukan di lingkungan sekitar yaitu jajanan tradisional Indonesia. Tentunya setiap daerah memiliki masing-masing ciri khas jajanan pasar tradisionalnya sendiri. Baik dari segi bahan dasar yang dipakai, cara pembuatan hingga rasanya.
+        <br><br>
+        Dulu kita mudah menemukannya di pasar pagi atau dijajakan berkeliling kampung. Kini, sensasi otentik itu bisa anda ciptakan sendiri di rumah. Kami telah merangkum 12 resep jajanan pasar paling populer yang akan membawa anda kembali ke kenangan masa kecil. Saatnya menyalakan kompor dan melestarikan cita rasa Nusantara!
+      </p>
+    </section>
+
+    <!-- DAFTAR ISI -->
+    <section class="toc" aria-label="Daftar Isi">
+      <h2>🍡 Daftar Isi (klik untuk langsung ke resep)</h2>
+      <a href="#nagasari">1. Nagasari</a>
+      <a href="#klepon">2. Klepon</a>
+      <a href="#onde">3. Onde-Onde</a>
+      <a href="#dadar">4. Dadar Gulung</a>
+      <a href="#lapis">5. Kue Lapis</a>
+      <a href="#cubit">6. Kue Cubit</a>
+      <a href="#putu">7. Putu Ayu</a>
+      <a href="#serabi">8. Serabi</a>
+      <a href="#lemper">9. Lemper</a>
+      <a href="#getuk">10. Getuk Lindri</a>
+      <a href="#cucur">11. Kue Cucur</a>
+      <a href="#talam">12. Kue Talam</a>
+    </section>
+
+    <!-- 1 Nagasari -->
+    <article class="resep" id="nagasari">
+      <h2>1. Nagasari</h2>
+      <div class="photo"><img src="https://akcdn.detik.net.id/community/media/visual/2021/06/24/resep-nagasari-tepung-beras-1_43.jpeg?w=600&q=90" alt="Nagasari - kue pisang tradisional"></div>
+
+      <div class="grid-2">
+        <div class="box">
+          <h3>Alat:</h3>
+          <ul>
+            <li>Panci kukus</li>
+            <li>Mangkuk besar</li>
+            <li>Sendok pengaduk</li>
+            <li>Pisau dan talenan</li>
+            <li>Daun pisang untuk membungkus</li>
+          </ul>
+        </div>
+
+        <div class="box">
+          <h3>Bahan:</h3>
+          <ul>
+            <li>200 g tepung beras</li>
+            <li>500 ml santan kental</li>
+            <li>100 g gula pasir</li>
+            <li>½ sdt garam</li>
+            <li>3–4 buah pisang raja atau pisang kepok (ukur kecil)</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 class="step-title">Cara membuat (langkah rinci):</h3>
+      <ol>
+        <li>Siapkan daun pisang: potong ukuran sekitar 12x18 cm, lap bersih, dan hangatkan di atas api kecil supaya lentur.</li>
+        <li>Campur tepung beras, gula, garam, lalu tuang santan sedikit demi sedikit sambil diaduk sampai larutan halus tanpa gumpal.</li>
+        <li>Masak adonan di atas api kecil, aduk terus sampai mengental dan terasa lembut (hindari menggumpal).</li>
+        <li>Potong pisang sesuai ukuran, ambil 1 sdm adonan, letakkan di daun pisang, letakkan seiris pisang, lalu tutup dengan sedikit adonan lagi.</li>
+        <li>Bungkus rapi dan sematkan, susun dalam panci kukus, kukus selama ±25 menit sampai matang.</li>
+        <li>Angkat, dinginkan sedikit agar isi set dan tidak pecah saat dibuka. Sajikan hangat atau suhu ruang.</li>
+      </ol>
+
+      <div class="funfact">Fun fact: Nagasari populer di Jawa Tengah dan Jawa Timur; pembungkus daun pisang memberi aroma khas yang otentik.</div>
+
+      <div class="kembali"><a href="#intro">⬆ Kembali ke atas</a></div>
+    </article>
+
+    <!-- 2 Klepon -->
+    <article class="resep" id="klepon">
+      <h2>2. Klepon</h2>
+      <div class="photo"><img src="https://static.uc.ac.id/fikom/2020/12/Pic-1.jpeg" alt="Klepon - bola ketan isi gula merah"></div>
+
+      <div class="grid-2">
+        <div class="box">
+          <h3>Alat:</h3>
+          <ul>
+            <li>Wadah untuk mengaduk</li>
+            <li>Panci untuk merebus</li>
+            <li>Saringan</li>
+            <li>Parutan kelapa</li>
+          </ul>
+        </div>
+        <div class="box">
+          <h3>Bahan:</h3>
+          <ul>
+            <li>200 g tepung ketan</li>
+            <li>100 ml air pandan (daun pandan halus + air)</li>
+            <li>Gula merah sisir (secukupnya untuk isi)</li>
+            <li>Kelapa parut kukus + sedikit garam</li>
+            <li>1 sdt air kapur sirih (opsional untuk kenyal)</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 class="step-title">Cara membuat (langkah rinci):</h3>
+      <ol>
+        <li>Campur tepung ketan, air pandan, dan jika pakai, air kapur sirih; uleni hingga adonan kalis dan mudah dibentuk.</li>
+        <li>Ambil sedikit adonan, pipihkan, beri gula merah sisir secukupnya di tengah, lalu bulatkan rapat agar gula tidak bocor.</li>
+        <li>Didihkan air dalam panci, masukkan bola-bola klepon, rebus sampai mengapung (tanda matang).</li>
+        <li>Angkat dengan saringan, tiriskan, lalu gulingkan ke kelapa parut yang sudah diberi sedikit garam sehingga terasa gurih manis.</li>
+        <li>Sajikan segera agar kelapa tetap harum dan tekstur klepon kenyal.</li>
+      </ol>
+
+      <div class="funfact">Fun fact: Klepon sering disebut “onde-onde” di beberapa daerah—tapi beda penyebutan; rasa manis lumer di tengah jadi ciri khasnya.</div>
+      <div class="kembali"><a href="#intro">⬆ Kembali ke atas</a></div>
+    </article>
+
+    <!-- 3 Onde-onde -->
+    <article class="resep" id="onde">
+      <h2>3. Onde-Onde</h2>
+      <div class="photo"><img src="https://akcdn.detik.net.id/community/media/visual/2023/05/14/resep-onde-onde-isi-kacang-hijau.jpeg?w=600&q=90" alt="Onde-onde - bola goreng berlapis wijen"></div>
+
+      <div class="grid-2">
+        <div class="box">
+          <h3>Alat:</h3>
+          <ul>
+            <li>Mangkuk</li>
+            <li>Wajan untuk menggoreng</li>
+            <li>Spatula dan saringan</li>
+          </ul>
+        </div>
+        <div class="box">
+          <h3>Bahan:</h3>
+          <ul>
+            <li>250 g tepung ketan</li>
+            <li>50 g kentang kukus (opsional untuk lembut)</li>
+            <li>100 g kacang hijau kupas (rebus & haluskan untuk isi)</li>
+            <li>100 g gula pasir</li>
+            <li>Wijen untuk baluran</li>
+            <li>Minyak goreng</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 class="step-title">Cara membuat (langkah rinci):</h3>
+      <ol>
+        <li>Jika membuat isi: rebus kacang hijau sampai empuk, haluskan, campur gula, tumis sebentar hingga kering dan mudah dibentuk, biarkan dingin dan bentuk bulatan kecil.</li>
+        <li>Campur tepung ketan (dan kentang kukus jika dipakai) dengan air hangat sedikit demi sedikit sampai adonan bisa dibentuk dan tidak lengket.</li>
+        <li>Ambil adonan kulit, pipihkan, isi dengan kacang hijau, lalu bulatkan.</li>
+        <li>Gulingkan ke wijen sampai rata, kemudian goreng dengan minyak sedang hingga kuning kecokelatan dan matang merata.</li>
+        <li>Tiriskan di kertas minyak, sajikan hangat atau suhu ruang.</li>
+      </ol>
+
+      <div class="funfact">Fun fact: Onde-onde yang diisi kacang hijau berbeda dengan onde-onde bakpao; jajanan ini populer di pasar dan pasar malam.</div>
+      <div class="kembali"><a href="#intro">⬆ Kembali ke atas</a></div>
+    </article>
+
+    <!-- 4 Dadar Gulung -->
+    <article class="resep" id="dadar">
+      <h2>4. Dadar Gulung</h2>
+      <div class="photo"><img src="https://linggaupos.bacakoran.co/upload/4b056e98e5e2231ab21f8e3a2c2f8627.jpeg" alt="Dadar gulung isi kelapa gula merah"></div>
+
+      <div class="grid-2">
+        <div class="box">
+          <h3>Alat:</h3>
+          <ul>
+            <li>Wajan datar anti lengket</li>
+            <li>Spatula</li>
+            <li>Mangkuk untuk mengaduk</li>
+          </ul>
+        </div>
+        <div class="box">
+          <h3>Bahan:</h3>
+          <ul>
+            <li>100 g tepung terigu</li>
+            <li>250 ml santan</li>
+            <li>Pasta pandan atau air pandan</li>
+            <li>½ butir kelapa parut</li>
+            <li>75 g gula merah sisir (untuk isi)</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 class="step-title">Cara membuat (langkah rinci):</h3>
+      <ol>
+        <li>Buat unti (isi): campur kelapa parut dan gula merah, masak dengan api kecil sambil diaduk sampai agak kering dan harum. Sisihkan.</li>
+        <li>Siapkan adonan kulit: campur tepung terigu, santan, sedikit garam, dan air pandan. Aduk sampai lembut dan tidak bergerindil.</li>
+        <li>Panaskan wajan datar, oles tipis minyak, tuang satu centong adonan, ratakan hingga membentuk lapisan tipis (seperti crepe).</li>
+        <li>Masak sampai bagian atas agak kering, angkat, letakkan 1 sendok isi unti di pinggir kulit, lalu gulung rapat.</li>
+        <li>Ulangi sampai adonan habis. Sajikan hangat atau suhu ruang.</li>
+      </ol>
+
+      <div class="funfact">Fun fact: Kulit dadar yang hijau berasal dari pandan; banyak anak-anak suka karena aromanya yang wangi dan isian manis bertekstur serat.</div>
+      <div class="kembali"><a href="#intro">⬆ Kembali ke atas</a></div>
+    </article>
+
+    <!-- 5 Kue Lapis -->
+    <article class="resep" id="lapis">
+      <h2>5. Kue Lapis</h2>
+      <div class="photo"><img src="https://cdn1-production-images-kly.akamaized.net/OyS7D6GeMIpMhxvrz8SpJQc6ptY=/4x58:1999x1182/469x260/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/3369846/original/016825400_1612582898-kue_lapis_pandan.jpg" alt="Kue lapis berlapis warna-warni"></div>
+
+      <div class="grid-2">
+        <div class="box">
+          <h3>Alat:</h3>
+          <ul>
+            <li>Loyang kecil</li>
+            <li>Kukusan</li>
+            <li>Mangkuk dan pengocok</li>
+          </ul>
+        </div>
+        <div class="box">
+          <h3>Bahan:</h3>
+          <ul>
+            <li>200 g tepung beras</li>
+            <li>100 g tepung tapioka</li>
+            <li>600 ml santan</li>
+            <li>150 g gula pasir</li>
+            <li>Pewarna makanan (secukupnya)</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 class="step-title">Cara membuat (langkah rinci):</h3>
+      <ol>
+        <li>Campur tepung beras, tepung tapioka, gula, dan santan jadi satu hingga larutan halus tanpa gumpal.</li>
+        <li>Bagi adonan sesuai jumlah warna yang mau dibuat; beri pewarna pada masing-masing bagian.</li>
+        <li>Panaskan kukusan; tuang satu lapis tipis adonan pertama ke loyang, kukus sekitar 4–6 menit sampai setengah matang.</li>
+        <li>Tuang lapisan berikutnya, kukus lagi; ulangi sampai semua lapisan selesai. Biasanya butuh 30–40 menit total.</li>
+        <li>Setelah matang, dinginkan dulu baru potong agar lapisan rapi.</li>
+      </ol>
+
+      <div class="funfact">Fun fact: Kue lapis identik dengan perayaan tradisional dan kerap disajikan saat acara khusus karena tampilannya yang cantik.</div>
+      <div class="kembali"><a href="#intro">⬆ Kembali ke atas</a></div>
+    </article>
+
+    <!-- 6 Kue Cubit -->
+    <article class="resep" id="cubit">
+      <h2>6. Kue Cubit</h2>
+      <div class="photo"><img src="https://static.promediateknologi.id/crop/0x0:0x0/0x0/webp/photo/p2/232/2025/08/29/Picture1-1-268030015.jpg" alt="Kue cubit mini dengan topping"></div>
+
+      <div class="grid-2">
+        <div class="box">
+          <h3>Alat:</h3>
+          <ul>
+            <li>Cetakan kue cubit</li>
+            <li>Mixer / whisk</li>
+            <li>Spatula</li>
+          </ul>
+        </div>
+        <div class="box">
+          <h3>Bahan:</h3>
+          <ul>
+            <li>100 g tepung terigu</li>
+            <li>50 g gula pasir</li>
+            <li>1 butir telur</li>
+            <li>100 ml susu cair</li>
+            <li>½ sdt baking powder</li>
+            <li>Topping: meses, keju parut, atau coklat</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 class="step-title">Cara membuat (langkah rinci):</h3>
+      <ol>
+        <li>Kocok telur dan gula sampai agak mengembang dan gula sedikit larut.</li>
+        <li>Masukkan tepung terigu, susu, dan baking powder, aduk sampai rata dan tekstur agak kental namun cair.</li>
+        <li>Panaskan cetakan, oles sedikit margarin, tuang adonan sampai setengah penuh.</li>
+        <li>Taburi topping sesuai selera, tutup, masak beberapa menit sampai pinggir set dan bagian tengah matang.</li>
+        <li>Angkat dengan tusuk kecil, sajikan hangat.</li>
+      </ol>
+
+      <div class="funfact">Fun fact: Kue cubit adalah jajanan kesukaan anak sekolah; banyak penjual menambahkan topping kreatif supaya lebih menarik.</div>
+      <div class="kembali"><a href="#intro">⬆ Kembali ke atas</a></div>
+    </article>
+
+    <!-- 7 Putu Ayu -->
+    <article class="resep" id="putu">
+      <h2>7. Putu Ayu</h2>
+      <div class="photo"><img src="https://asset.kompas.com/crops/5EFpztkDV0ldn5SlKWcnTe1tcjY=/0x0:1000x667/1200x800/data/photo/2021/09/16/61428af3bcd82.jpeg" alt="Putu ayu - bolu kelapa"></div>
+
+      <div class="grid-2">
+        <div class="box">
+          <h3>Alat:</h3>
+          <ul>
+            <li>Cetakan putu ayu (cup kecil)</li>
+            <li>Kukusan</li>
+            <li>Mixer</li>
+          </ul>
+        </div>
+        <div class="box">
+          <h3>Bahan:</h3>
+          <ul>
+            <li>2 butir telur</li>
+            <li>100 g gula pasir</li>
+            <li>100 ml santan</li>
+            <li>100 g tepung terigu</li>
+            <li>Kelapa parut kukus secukupnya</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 class="step-title">Cara membuat (langkah rinci):</h3>
+      <ol>
+        <li>Kocok telur dan gula sampai mengembang dan pucat.</li>
+        <li>Masukkan tepung sedikit-sedikit lalu santan, aduk perlahan hingga rata.</li>
+        <li>Oles dasar cetakan dengan kelapa parut supaya tampilan khas putu ayu terbentuk dan tidak lengket.</li>
+        <li>Tuang adonan ke cetakan, kukus selama ±12–15 menit sampai matang.</li>
+        <li>Angkat, dinginkan sejenak, keluarkan dari cetakan dan sajikan.</li>
+      </ol>
+
+      <div class="funfact">Fun fact: Kelapa di dasar putu ayu memberi tekstur dan aroma yang membuatnya khas dibanding bolu lainnya.</div>
+      <div class="kembali"><a href="#intro">⬆ Kembali ke atas</a></div>
+    </article>
+
+    <!-- === 8. SERABI (lanjutan) === -->
+    <section id="serabi">
+      <h2>8. Serabi</h2>
+      <div class="photo"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgtUqG1Pip-sgGyS63XFXXHCKPe89r1QqP_tkppkP6QWA_jpRjF9bLerwihbR5HIslyMKpMzzKhGSCYSf9kJaFy8xZIeZHNC24Uzqa1EdkB8W99Hu_y1hbeen8QHBmfk767zTRj0JtZqiLij-Pn03q2MTxTwzICFjJe9duLIxJ2lMEBkwQdTevCHMM-0g/s720/Screenshot_20220411-012100_1.jpg" alt="Serabi"></div>
+      
+      <div class="grid-2">
+        <div class="box">
+          <h3>Alat:</h3>
+          <ul>
+            <li>Wajan kecil</li>
+            <li>Sendok sayur</li>
+            <li>Pengaduk</li>
+            </ul>
+        </div>
+        <div class="box">
+          <h3>Bahan:</h3>
+          <ul>
+            <li>150 g tepung beras</li>
+            <li>200 ml santan</li>
+            <li>½ sdt ragi</li>
+            <li>50 g gula pasir</li>
+            <li>Garam dan daun pandan</li>
+            </ul>
+          </div>
+        </div>
+        
+      <h3 class="step-title">Cara membuat (langkah rinci):</h3>
+      <ol>
+        <li>Campur semua bahan, aduk rata, lalu diamkan selama 30 menit.</li>
+        <li>Panaskan wajan kecil, tuang 1 sendok sayur adonan.</li>
+         <li>Masak hingga bagian bawah kecokelatan dan permukaan berlubang.</li>
+        <li>Sajikan hangat dengan kuah gula merah cair.</li>
+       </ol>
+       
+       <div class="funfact">Fun fact: Getuk Lindri berasal dari Jawa Tengah dan dikenal dengan warna-warninya yang cerah. Warna getuk dibuat dari pewarna alami seperti daun suji (hijau) dan ubi ungu (ungu).</div>
+       <div class="kembali"><a href="#intro">1 Kembali ke atas</a></div>
+    </article>
+
+    <!-- === 9. LEMPER === -->
+    <section id="lemper">
+      <h2>9. Lemper</h2>
+      <div class="photo"><img src="https://asset.kompas.com/crops/JIM3U0jLZwUpDSwU_AjvX2zBVXU=/0x441:715x917/1200x800/data/photo/2021/08/21/61205c2279744.jpeg" alt="Lemper"></div>
+
+      <div class="grid-2">
+        <div class="box">
+          <h3>Alat:</h3>
+          <ul>
+            <li>Kukusan</li>
+            <li>Wajan</li>
+            <li>Daun pisang</li>
+            </ul>
+        </div>
+        <div class="box">
+          <h3>Bahan:</h3>
+          <ul>
+            <li>250 g beras ketan</li>
+            <li>250 ml santan</li>
+            <li>Garam secukupnya</li>
+            <li>Ayam suwir berbumbu (bawang putih, ketumbar, garam)</li>
+            </ul>
+          </div>
+        </div>
+      <h3 class="step-title">Cara membuat (langkah rinci):</h3>
+      <ol>
+        <li>Kukus ketan setengah matang, campur dengan santan dan garam, lalu kukus lagi hingga matang.</li>
+        <li>Tumis ayam suwir berbumbu hingga kering.</li>
+        <li>Ambil sedikit ketan, pipihkan, isi dengan ayam, lalu bungkus daun pisang.</li>
+        <li>Kukus kembali selama 10 menit sebelum disajikan.</li>
+      </ol>
+      
+      <div class="funfact">Fun fact: Nama “lemper” berasal dari kata Jawa “lempit” yang berarti dibungkus.Biasanya lemper dihidangkan pada acara hajatan atau perayaan karena dianggap melambangkan “keakraban” dan “kerukunan”.</div>
+      <div class="kembali"><a href="#intro">1 Kembali ke atas</a></div>
+    </article>
+    
+    <!-- === 10. GETUK LINDRI === -->
+    <section id="getuk">
+      <h2>10. Getuk Lindri</h2>
+      <div class="photo"><img src="https://asset.tribunnews.com/Jw5CCKtAqU7bdsbPyHBHHczAuUg=/1200x800/filters:upscale():quality(30):format(webp):focal(0.5x0.5:0.5x0.5)/medan/foto/bank/originals/getuk-lindri-2.jpg" alt="Getuk Lindri"></div>
+    
+      <div class="grid-2">
+        <div class="box">
+          <h3>Alat:</h3>
+          <ul>
+            <li>Kukusan</li>
+            <li>Ulekan</li>
+            <li>Cetakan</li>
+            </ul>
+        </div>
+        <div class="box">
+          <h3>Bahan:</h3>
+          <ul>
+            <li>500 g singkong rebus</li>
+            <li>100 g gula pasir</li>
+            <li>Pewarna makanan</li>
+            <li>Kelapa parut kukus</li>
+            </ul>
+          </div>
+        </div>
+      <h3 class="step-title">Cara membuat (langkah rinci):</h3>
+      <ol>
+        <li>Haluskan singkong rebus hingga lembut, tambahkan gula pasir, aduk rata.</li>
+        <li>Bagi adonan menjadi beberapa warna sesuai selera.</li>
+        <li>Cetak memanjang atau pipih, susun di piring saji.</li>
+        <li>Taburi kelapa parut sebelum disajikan.</li>
+      </ol>
+        
+        <div class="funfact">Fun fact:Getuk Lindri berasal dari Jawa Tengah dan dikenal dengan warna-warninya yang cerah. Warna getuk dibuat dari pewarna alami seperti daun suji (hijau) dan ubi ungu (ungu).</div>
+        <div class="kembali"><a href="#intro">1 Kembali ke atas</a></div>
+    </article>
+
+    <!-- === 11. KUE CUCUR === -->
+    <section id="cucur">
+      <h2>11. Kue Cucur</h2>
+      <div class="photo"><img src="https://wiratech.co.id/wp-content/uploads/2022/01/Kue-Cucur-1.jpg" alt="Kue Cucur"></div>
+      
+      <div class="grid-2">
+        <div class="box">
+          <h3>Alat:</h3>
+          <ul>
+            <li>Wajan kecil</li>
+            <li>Sendok sayur</li>
+            </ul>
+        </div>
+        <div class="box">
+          <h3>Bahan:</h3>
+          <ul>
+            <li>200 g tepung beras</li>
+            <li>100 g gula merah</li>
+            <li>50 g gula pasir</li>
+            <li>250 ml air</li>
+            </ul>
+          </div> 
+        </div>
+      <h3 class="step-title">Cara membuat (langkah rinci):</h3>
+      <ol>
+        <li>Rebus gula merah, gula pasir, dan air hingga larut, lalu saring.</li>
+        <li>Campurkan larutan gula dengan tepung beras, aduk rata, diamkan 30 menit.</li>
+        <li>Goreng sedikit demi sedikit hingga bagian pinggirnya renyah.</li>
+      </ol>
+      
+        <div class="funfact">Fun fact:Kue cucur populer di seluruh Asia Tenggara! Di Thailand dikenal dengan nama “Khanom Fak Bua”, sementara di Indonesia sering disajikan dalam acara adat sebagai simbol rezeki yang melimpah.</div>
+        <div class="kembali"><a href="#intro">1 Kembali ke atas</a></div>
+    </article>
+
+    <!-- === 12. KUE TALAM === -->
+    <section id="talam">
+      <h2>12. Kue Talam</h2>
+      <div class="photo"><img src="https://i0.wp.com/resepkoki.id/wp-content/uploads/2018/09/Resep-Talam-Tepung-Beras-Pandan.jpg?fit=500%2C667&ssl=1" alt="Kue Talam"></div>
+      
+      <div class="grid-2">
+        <div class="box">
+          <h3>Alat:</h3>
+          <ul>
+            <li>Loyang kecil</li>
+            <li>Kukusan</li>
+            </ul>
+        <div class="box"> 
+          <h3>Bahan:</h3>
+          <ul>
+            <li>100 g tepung beras</li>
+            <li>50 g tepung tapioka</li>
+            <li>300 ml santan</li>
+            <li>100 g gula pasir</li>
+            <li>Daun pandan dan garam secukupnya</li>
+            </ul>
+          </div>
+        </div> 
+        
+      <h3 class="step-title">Cara membuat (langkah rinci):</h3>
+      <ol>
+        <li>Campur bahan lapisan bawah (pandan, gula, santan, tepung), kukus 10 menit.</li>
+        <li>Buat lapisan atas tanpa pandan, lebih gurih rasanya.</li>
+        <li>Tuang di atas lapisan bawah, kukus lagi 10–15 menit.</li>
+        <li>Diamkan hingga dingin sebelum dipotong dan disajikan.</li>
+      </ol>
+      
+        <div class="funfact">Fun fact: Kue talam punya dua lapisan yang melambangkan keseimbangan antara rasa manis dan gurih. Di beberapa daerah, kue ini sering disajikan sebagai hidangan penutup saat acara syukuran.</div>
+        <div class="kembali"><a href="#intro">1 Kembali ke atas</a></div>
+    </article>
+
+    <!-- === FOOTER === -->
+    <footer>
+      <h2>👩‍🍳 Kelompok 2</h2>
+      <p>1. Intan Melani</p>
+      <p>2. Diana Sapitri</p>
+      <p>3. Alissia Oktapiani</p>
+      <p>4. Syifa Putri Purnomo</p>
+      <p>5. Nathania Ardiyanti Bey</p>
+      <p>6. Muhamad Fajri Khaeran</p>
+      <p>Terima kasih telah mengunjungi web kami! 💛</p>
+    </footer>
+  </main>
+</body>
+</html>
